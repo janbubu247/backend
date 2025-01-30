@@ -1,13 +1,6 @@
 {
-  "jwtSecret": "$2a$10$f7@#MS_@Jwt",
-  "cryptoSecret": "$2a$10$_@Crypto@",
   "PGUser": "root",
   "PGPassword": "Kea8U3cZVjn^X$",
-  "PGServer": "103.153.141.71",
-  "PGDatabase": "teever",
-  "keyAPI": "$api_achaaTeever`@#",
-  "TestKeyAPI": "$api_achaaTeever`@#",
-  "Mode": "real",
-  "DBMode": "real",
-  "SSL": false
+  "PGServer": "localhost",
+  "PGDatabase": "teever"
 }
