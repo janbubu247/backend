@@ -1,0 +1,1271 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "MagicMC server swagger",
+    "description": "",
+    "version": "1.0"
+  },
+  "paths": {
+    "/publicapi/auth/signin": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Нэвтрэх api бөгөөд token үүсгэж өгнө.",
+        "operationId": "AuthSignin",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MAuth"
+            }
+          }
+        ]
+      }
+    },
+    "/publicapi/auth/signout": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Системээс гарах api.",
+        "operationId": "AuthSignout",
+        "parameters": []
+      }
+    },
+    "/api/priv/addmpriv": {
+      "post": {
+        "tags": ["Priv"],
+        "summary": "Create MPriv",
+        "operationId": "AddMPriv",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MPrivRequest"
+            }
+          }
+        ]
+      }
+    },
+    "/api/priv/updatempriv": {
+      "put": {
+        "tags": ["Priv"],
+        "summary": "Update MPriv",
+        "operationId": "EditMPriv",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MPrivRequest"
+            }
+          }
+        ]
+      }
+    },
+    "/api/priv/deletempriv/{privno}": {
+      "delete": {
+        "tags": ["Priv"],
+        "summary": "Delete MPriv",
+        "operationId": "DeleteMPriv",
+        "parameters": [
+          {
+            "name": "privno",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "privno param"
+          }
+        ]
+      }
+    },
+    "/api/priv/getmpriv/{privno}": {
+      "get": {
+        "tags": ["Priv"],
+        "summary": "Get MPriv",
+        "operationId": "GetMPriv",
+        "parameters": [
+          {
+            "name": "privno",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "privno param"
+          }
+        ]
+      }
+    },
+    "/api/priv/listpriv": {
+      "get": {
+        "tags": ["Priv"],
+        "summary": "List MPriv",
+        "operationId": "ListMPriv",
+        "parameters": []
+      }
+    },
+    "/api/privgroup/addmpriv_group": {
+      "post": {
+        "tags": ["PrivGroup"],
+        "summary": "Create MPriv Group",
+        "operationId": "AddMPrivGroup",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MPrivGroupRequest"
+            }
+          }
+        ]
+      }
+    },
+    "/api/privgroup/updatempriv_group": {
+      "put": {
+        "tags": ["PrivGroup"],
+        "summary": "Update MPriv Group",
+        "operationId": "EditMPrivGroup",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MPrivGroupRequest"
+            }
+          }
+        ]
+      }
+    },
+    "/api/privgroup/deletempriv_group/{privgroupid}": {
+      "delete": {
+        "tags": ["PrivGroup"],
+        "summary": "Delete MPriv Group",
+        "operationId": "DeleteMPrivGroup",
+        "parameters": [
+          {
+            "name": "privgroupid",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "privgroupid param"
+          }
+        ]
+      }
+    },
+    "/api/privgroup/getmpriv_group/{privgroupid}": {
+      "get": {
+        "tags": ["PrivGroup"],
+        "summary": "Get MPriv Group",
+        "operationId": "GetMPrivGroup",
+        "parameters": [
+          {
+            "name": "privgroupid",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "privgroupid param"
+          }
+        ]
+      }
+    },
+    "/api/privgroup/listmpriv_group": {
+      "get": {
+        "tags": ["PrivGroup"],
+        "summary": "List MPriv Group",
+        "operationId": "ListMPrivGroup",
+        "parameters": []
+      }
+    },
+    "/api/privgrouppriv/addmpriv_grouppriv": {
+      "post": {
+        "tags": ["PrivGroupPriv"],
+        "summary": "Create MPriv Group Priv",
+        "operationId": "AddMPrivGroupPriv",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MPriv_GroupPrivRequest"
+            }
+          }
+        ]
+      }
+    },
+    "/api/privgrouppriv/updatempriv_grouppriv": {
+      "put": {
+        "tags": ["PrivGroupPriv"],
+        "summary": "Update MPriv Group Priv",
+        "operationId": "UpdateMPrivGroupPriv",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MPriv_GroupPrivRequest"
+            }
+          }
+        ]
+      }
+    },
+    "/api/privgrouppriv/deletempriv_grouppriv/{privgroupid}": {
+      "delete": {
+        "tags": ["PrivGroupPriv"],
+        "summary": "Delete MPriv Group Priv",
+        "operationId": "DeleteMPrivGroupPriv",
+        "parameters": [
+          {
+            "name": "privgroupid",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "privgroupid param"
+          }
+        ]
+      }
+    },
+    "/api/privgrouppriv/getmpriv_grouppriv/{privgroupid}": {
+      "get": {
+        "tags": ["PrivGroupPriv"],
+        "summary": "Get MPriv Group Priv",
+        "operationId": "GetMPrivGroupPriv",
+        "parameters": [
+          {
+            "name": "privgroupid",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "privgroupid param"
+          }
+        ]
+      }
+    },
+    "/api/privgrouppriv/listmpriv_grouppriv/{privgroupid}": {
+      "get": {
+        "tags": ["PrivGroupPriv"],
+        "summary": "List MPriv Group Priv",
+        "operationId": "ListMPrivGroupPriv",
+        "parameters": [
+          {
+            "name": "privgroupid",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "privgroupid param"
+          }
+        ]
+      }
+    },
+    "/api/privgrouppriv/getallmpriv_grouppriv/{privgroupid}": {
+      "get": {
+        "tags": ["PrivGroupPriv"],
+        "summary": "Get All MPriv Group Priv",
+        "operationId": "GetAllMPrivGroupPriv",
+        "parameters": [
+          {
+            "name": "privgroupid",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "privgroupid param"
+          }
+        ]
+      }
+    },
+    "/api/privgroupuser/addmpriv_groupuser": {
+      "post": {
+        "tags": ["PrivGroupUser"],
+        "summary": "Create MPriv Group User",
+        "operationId": "AddMPrivGroupUser",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MPriv_GroupUserRequest"
+            }
+          }
+        ]
+      }
+    },
+    "/api/privgroupuser/updatempriv_groupuser": {
+      "put": {
+        "tags": ["PrivGroupUser"],
+        "summary": "Update MPriv Group User",
+        "operationId": "UpdatePrivGroupUser",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MPriv_GroupUserRequest"
+            }
+          }
+        ]
+      }
+    },
+    "/api/privgroupuser/deletempriv_groupuser/{userkey}": {
+      "delete": {
+        "tags": ["PrivGroupUser"],
+        "summary": "Delete MPriv Group User",
+        "operationId": "DeleteMPrivGroupUser",
+        "parameters": [
+          {
+            "name": "userkey",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "userkey param"
+          }
+        ]
+      }
+    },
+    "/api/privgroupuser/getmpriv_groupuser/{userkey}": {
+      "get": {
+        "tags": ["PrivGroupUser"],
+        "summary": "Get All MPriv Group User",
+        "operationId": "GetAllMPrivGroupUser",
+        "parameters": [
+          {
+            "name": "userkey",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "userkey param"
+          }
+        ]
+      }
+    },
+    "/api/privgroupuser/getallmpriv_groupuser": {
+      "get": {
+        "tags": ["PrivGroupUser"],
+        "summary": "List All MPriv Group User",
+        "operationId": "ListAllMPrivGroupUser",
+        "parameters": []
+      }
+    },
+    "/api/employee/addemployee": {
+      "post": {
+        "tags": ["Employee"],
+        "summary": "Create Employee",
+        "operationId": "CreateEmployee",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/MEmployee"
+            }
+          }
+        ]
+      }
+    },
+    "/api/employee/deleteemployee/:employeeid": {
+      "delete": {
+        "tags": ["Employee"],
+        "summary": "Delete Employee",
+        "operationId": "DeleteEmployee",
+        "parameters": [
+          {
+            "name": "employeeid",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "employeeid param"
+          }
+        ]
+      }
+    },
+    "/api/employee/getemployee/:employeeid": {
+      "get": {
+        "tags": ["Employee"],
+        "summary": "Get Employee",
+        "operationId": "GetEmployee",
+        "parameters": [
+          {
+            "name": "employeeid",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "employeeid param"
+          }
+        ]
+      }
+    },
+    "/api/log/action": {
+      "post": {
+        "tags": ["ApiLog"],
+        "summary": "Api Action Log List",
+        "operationId": "ApiActionLogList",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pid": {
+                  "type": "string"
+                },
+                "pSize": {
+                  "type": "string"
+                },
+                "filter": {
+                  "type": "object",
+                  "properties": {
+                    "Controller": {
+                      "type": "string"
+                    },
+                    "Action": {
+                      "type": "string"
+                    },
+                    "UserID": {
+                      "type": "string"
+                    },
+                    "BeginDate": {
+                      "type": "date"
+                    },
+                    "EndDate": {
+                      "type": "date"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/log/error": {
+      "post": {
+        "tags": ["ApiLog"],
+        "summary": "Api Error Log List",
+        "operationId": "ApiErrorLogList",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pid": {
+                  "type": "string"
+                },
+                "pSize": {
+                  "type": "string"
+                },
+                "filter": {
+                  "type": "object",
+                  "properties": {
+                    "Controller": {
+                      "type": "string"
+                    },
+                    "Action": {
+                      "type": "string"
+                    },
+                    "Type": {
+                      "type": "string"
+                    },
+                    "BeginDate": {
+                      "type": "date"
+                    },
+                    "EndDate": {
+                      "type": "date"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/typeasuudal/add": {
+      "post": {
+        "tags": ["TypeAsuudal"],
+        "summary": "Api TypeAsuudal Add",
+        "operationId": "ApiTypeAsuudalAdd",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "asuudal": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/typeasuudal/update": {
+      "put": {
+        "tags": ["TypeAsuudal"],
+        "summary": "Api TypeAsuudal Update",
+        "operationId": "ApiTypeAsuudalUpdate",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "asuudal": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/typeasuudal/get/:id": {
+      "get": {
+        "tags": ["TypeAsuudal"],
+        "summary": "Api TypeAsuudal Get",
+        "operationId": "ApiTypeAsuudalGet",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "id param"
+          }
+        ]
+      }
+    },
+    "/api/typeasuudal/delete/:id": {
+      "delete": {
+        "tags": ["TypeAsuudal"],
+        "summary": "Api TypeAsuudal Delete",
+        "operationId": "ApiTypeAsuudalDelete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "id param"
+          }
+        ]
+      }
+    },
+    "/api/typeasuudal/list": {
+      "post": {
+        "tags": ["TypeAsuudal"],
+        "summary": "Api TypeAsuudal List",
+        "operationId": "ApiTypeAsuudalList",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pid": {
+                  "type": "string"
+                },
+                "pSize": {
+                  "type": "string"
+                },
+                "filter": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/typenotolgoo/add": {
+      "post": {
+        "tags": ["TypeNotolgoo"],
+        "summary": "Api TypeNotolgoo Add",
+        "operationId": "ApiTypeNotolgooAdd",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "notolgoo": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/typenotolgoo/update": {
+      "put": {
+        "tags": ["TypeNotolgoo"],
+        "summary": "Api TypeNotolgoo Update",
+        "operationId": "ApiTypeNotlogooUpdate",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "notolgoo": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/typenotolgoo/get/:id": {
+      "get": {
+        "tags": ["TypeNotolgoo"],
+        "summary": "Api TypeNotolgoo Get",
+        "operationId": "ApiTypeNotolgooGet",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "id param"
+          }
+        ]
+      }
+    },
+    "/api/typenotolgoo/delete/:id": {
+      "delete": {
+        "tags": ["TypeNotolgoo"],
+        "summary": "Api TypeNotolgoo Delete",
+        "operationId": "ApiTypeNotolgooDelete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "id param"
+          }
+        ]
+      }
+    },
+    "/api/typenotolgoo/list": {
+      "post": {
+        "tags": ["TypeNotolgoo"],
+        "summary": "Api TypeNotolgoo List",
+        "operationId": "ApiTypeNotolgooList",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pid": {
+                  "type": "string"
+                },
+                "pSize": {
+                  "type": "string"
+                },
+                "filter": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/typezurchil/add": {
+      "post": {
+        "tags": ["TypeZurchil"],
+        "summary": "Api TypeZurchil Add",
+        "operationId": "ApiTypeZurchilAdd",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "zurchil": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "parent_id": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/typezurchil/update": {
+      "put": {
+        "tags": ["TypeZurchil"],
+        "summary": "Api TypeZurchil Update",
+        "operationId": "ApiTypeZurchilUpdate",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "zurchil": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "parent_id": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/typezurchil/get/:id": {
+      "get": {
+        "tags": ["TypeZurchil"],
+        "summary": "Api TypeZurchil Get",
+        "operationId": "ApiTypeZurchilGet",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "id param"
+          }
+        ]
+      }
+    },
+    "/api/typezurchil/delete/:id": {
+      "delete": {
+        "tags": ["TypeZurchil"],
+        "summary": "Api TypeZurchil Delete",
+        "operationId": "ApiTTypeZurchilDelete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "id param"
+          }
+        ]
+      }
+    },
+    "/api/typezurchil/list": {
+      "post": {
+        "tags": ["TypeZurchil"],
+        "summary": "Api TypeZurchil List",
+        "operationId": "ApiTTypeZurchilList",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pid": {
+                  "type": "string"
+                },
+                "pSize": {
+                  "type": "string"
+                },
+                "filter": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/typedans/add": {
+      "post": {
+        "tags": ["TypeDans"],
+        "summary": "Api TypeDans Add",
+        "operationId": "ApiTypeDansAdd",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "dans": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "parent_id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/typedans/update": {
+      "put": {
+        "tags": ["TypeDans"],
+        "summary": "Api TypeDans Update",
+        "operationId": "ApiTypeDansUpdate",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "dans": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "parent_id": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/api/typedans/get/:id": {
+      "get": {
+        "tags": ["TypeDans"],
+        "summary": "Api TypeDans Get",
+        "operationId": "ApiTypeDansGet",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "id param"
+          }
+        ]
+      }
+    },
+    "/api/typedans/delete/:id": {
+      "delete": {
+        "tags": ["TypeDans"],
+        "summary": "Api TypeDans Delete",
+        "operationId": "ApiTypeDansDelete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "id param"
+          }
+        ]
+      }
+    },
+    "/api/typedans/list": {
+      "post": {
+        "tags": ["TypeDans"],
+        "summary": "Api TypeDans List",
+        "operationId": "ApiTypeDansList",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pid": {
+                  "type": "string"
+                },
+                "pSize": {
+                  "type": "string"
+                },
+                "filter": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+
+
+    
+    "/api/customer/add": {
+      "post": {
+        "tags": ["Customer"],
+        "summary": "Create Customer",
+        "operationId": "AddCustomer",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/customer"
+            }
+          }
+        ]
+      }
+    },
+    "/api/customer/update": {
+      "put": {
+        "tags": ["Customer"],
+        "summary": "Update Customer",
+        "operationId": "EditCustomer",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/customer"
+            }
+          }
+        ]
+      }
+    },
+    "/api/customer/delete/{id}": {
+      "delete": {
+        "tags": ["Customer"],
+        "summary": "Delete Customer",
+        "operationId": "DeleteCustomer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "id param"
+          }
+        ]
+      }
+    },
+    "/api/customer/get/{id}": {
+      "get": {
+        "tags": ["Customer"],
+        "summary": "Get Customer",
+        "operationId": "GetCustomer",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "id param"
+          }
+        ]
+      }
+    },
+    "/api/customer/list": {
+      "post": {
+        "tags": ["Customer"],
+        "summary": "Api Customer List",
+        "operationId": "ApiCustomerList",
+        "parameters": [
+          {
+            "name": "request",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pid": {
+                  "type": "string"
+                },
+                "pSize": {
+                  "type": "string"
+                },
+                "filter": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+
+  "definitions": {
+    "MAuth": {
+      "type": "object",
+      "properties": {
+        "Username": {
+          "type": "string"
+        },
+        "Password": {
+          "type": "string"
+        }
+      }
+    },
+    "MPriv": {
+      "type": "object",
+      "properties": {
+        "privNo": {
+          "type": "string"
+        },
+        "privName": {
+          "type": "string"
+        }
+      }
+    },
+    "MPrivRequest": {
+      "type": "object",
+      "properties": {
+        "mPriv": {
+          "$ref": "#/definitions/MPriv"
+        }
+      }
+    },
+    "mPriv_Group": {
+      "type": "object",
+      "properties": {
+        "privGroupId": {
+          "type": "string"
+        },
+        "privGroupName": {
+          "type": "string"
+        },
+        "isUserGroup": {
+          "type": "string"
+        }
+      }
+    },
+    "MPrivGroupRequest": {
+      "type": "object",
+      "properties": {
+        "mPriv": {
+          "$ref": "#/definitions/mPriv_Group"
+        }
+      }
+    },
+    "MPriv_GroupPrivRequest": {
+      "type": "object",
+      "properties": {
+        "privGroupId": {
+          "type": "string"
+        },
+        "mPrivs": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MPriv"
+          }
+        }
+      }
+    },
+    "MPriv_GroupUserRequest": {
+      "type": "object",
+      "properties": {
+        "userKey": {
+          "type": "string"
+        },
+        "mPriv_Groups": {
+          "uniqueItems": false,
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/mPriv_Group"
+          }
+        }
+      }
+    },
+    "MEmployee": {
+      "type": "object",
+      "properties": {
+        "Username": {
+          "type": "string"
+        },
+        "Password": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "int"
+        },
+        "Mobile": {
+          "type": "string"
+        },
+        "ProfileImg": {
+          "type": "string"
+        }
+      }
+    },
+    "customer": {
+      "type": "object",
+      "properties": {
+        "customer": {
+          "type": "object",
+          "properties": {
+            "register_number": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "mobile": {
+              "type": "string"
+            },
+            "telephone": {
+              "type": "string"
+            },
+            "director_name": {
+              "type": "string"
+            },
+            "accountant_name": {
+              "type": "string"
+            },
+            "company_type": {
+              "type": "string"
+            },
+            "company_size": {
+              "type": "string"
+            },
+            "industry_id": {
+              "type": "string"
+            },
+            "city_id": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "is_active": {
+              "type": "int"
+            }
+          }
+        }
+      }
+    }
+  }
+}
